@@ -3,7 +3,7 @@ export default function Title({ title }) {
     <>
       <h1 className="text-5xl text-aquaMarine mb-3">
         Nephro
-        <span className="text-teal">Xpret</span>
+        <span className="text-teal">Xpert</span>
       </h1>
       {title ? (
         <h4 className="text-xl">{title}</h4>
