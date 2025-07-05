@@ -2,6 +2,7 @@ import { useState } from "react";
 import Input from "../ui/Input";
 import Title from "../ui/Title";
 import useKidneyPrediction from "../hooks/useKindeyPrediction";
+
 export default function Tools() {
   const [inputData, setInputData] = useState({
     potassium: "",
@@ -17,29 +18,15 @@ export default function Tools() {
   });
 
   const { handleClick, predict, loading } = useKidneyPrediction();
-
+  
   const handleChange = (e) => {
-    const { placeholder, value } = e.target;
+    // Use e.target.name to get the correct key for the state
+    const { name, value } = e.target;
     setInputData((prev) => ({
       ...prev,
-      [mapPlaceholderToKey(placeholder)]: value === "" ? "" : parseFloat(value),
+      // Convert to float if value is not empty, otherwise keep as empty string
+      [name]: value === name ? "" : parseFloat(value),
     }));
-  };
-
-  const mapPlaceholderToKey = (label) => {
-    const keyMap = {
-      haemoglobin: "haemoglobin",
-      potassium: "potassium",
-      Specific_gravity: "specific_gravity",
-      Blood_urea: "blood_urea",
-      Albumin: "albumin",
-      Blood_pressure: "blood_pressure",
-      Blood_glucose: "blood_glucose_random",
-      Serum_ceratine: "serum_creatinine",
-      Sugar_levels: "sugar",
-      Sodium: "sodium",
-    };
-    return keyMap[label] || label;
   };
 
   return (
@@ -55,6 +42,7 @@ export default function Tools() {
           <div className="grid">
             <p>haemoglobin</p>
             <Input
+              name="haemoglobin" // Added name prop
               placeholder={"Rentang Umum 3.1 - 17.8"}
               value={inputData.haemoglobin}
               onChange={handleChange}
@@ -63,6 +51,7 @@ export default function Tools() {
           <div className="grid">
             <p>potassium</p>
             <Input
+              name="potassium" // Added name prop
               placeholder={"Rentang Umum 2.5 - 47.0"}
               value={inputData.potassium}
               onChange={handleChange}
@@ -71,6 +60,7 @@ export default function Tools() {
           <div className="grid">
             <p>Specific gravity</p>
             <Input
+              name="specific_gravity" // Added name prop
               placeholder={"Rentang Umum 1.005 - 1.025"}
               value={inputData.specific_gravity}
               onChange={handleChange}
@@ -79,6 +69,7 @@ export default function Tools() {
           <div className="grid">
             <p>Blood Urea</p>
             <Input
+              name="blood_urea" // Added name prop
               placeholder={"Rentang Umum 1.5 - 391.0"}
               value={inputData.blood_urea}
               onChange={handleChange}
@@ -88,6 +79,7 @@ export default function Tools() {
           <div className="grid">
             <p>Albumin</p>
             <Input
+              name="albumin" // Added name prop
               placeholder={"Rentang Umum 0.0 - 5.0"}
               value={inputData.albumin}
               onChange={handleChange}
@@ -96,6 +88,7 @@ export default function Tools() {
           <div className="grid">
             <p>Blood Pressure</p>
             <Input
+              name="blood_pressure" // Added name prop
               placeholder={"Rentang Umum 50.0 - 180.0"}
               value={inputData.blood_pressure}
               onChange={handleChange}
@@ -104,6 +97,7 @@ export default function Tools() {
           <div className="grid">
             <p>Blood glucose</p>
             <Input
+              name="blood_glucose_random" // Added name prop
               placeholder={"Rentang Umum 22.0 - 490.0"}
               value={inputData.blood_glucose_random}
               onChange={handleChange}
@@ -112,6 +106,7 @@ export default function Tools() {
           <div className="grid">
             <p>Serum ceratine</p>
             <Input
+              name="serum_creatinine" // Added name prop
               placeholder={"Rentang Umum 0.4 - 76.0"}
               value={inputData.serum_creatinine}
               onChange={handleChange}
@@ -121,6 +116,7 @@ export default function Tools() {
           <div className="grid">
             <p>Sugar levels</p>
             <Input
+              name="sugar" // Added name prop
               placeholder={"Rentang Umum 0.0 - 5.0"}
               value={inputData.sugar}
               onChange={handleChange}
@@ -129,6 +125,7 @@ export default function Tools() {
           <div className="grid">
             <p>Sodium</p>
             <Input
+              name="sodium" // Added name prop
               placeholder={"Rentang Umum 4.5 - 163.0"}
               value={inputData.sodium}
               onChange={handleChange}
@@ -150,7 +147,7 @@ export default function Tools() {
         )}
 
         {!loading && predict && (
-          <div className="text-center mt-6 bg-greyCustom text-white p-4  ">
+          <div className="text-center mt-6 bg-greyCustom text-white p-4">
             <h2 className="text-xl font-bold">Prediction Result:</h2>
             <p
               className={`mt-2 text-2xl font-extrabold ${
@@ -159,7 +156,7 @@ export default function Tools() {
                   : "text-red-700"
               }`}
             >
-              {predict.predicted_label.toUpperCase() ?? "UNKNOWN"}
+              {predict.predicted_label?.toUpperCase() ?? "UNKNOWN"}
             </p>
           </div>
         )}

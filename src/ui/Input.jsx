@@ -1,6 +1,7 @@
-export default function Input({ placeholder, value, onChange }) {
+export default function Input({ placeholder, value, onChange ,name}) {
   return (
     <input
+    name ={name}
       type="number" // ✅ More appropriate for numeric input
       value={value}
       onChange={onChange}
