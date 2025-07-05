@@ -18,7 +18,7 @@ export default function Tools() {
   });
 
   const { handleClick, predict, loading } = useKidneyPrediction();
-  
+  console.log(inputData)
   const handleChange = (e) => {
     // Use e.target.name to get the correct key for the state
     const { name, value } = e.target;
@@ -158,6 +158,9 @@ export default function Tools() {
             >
               {predict.predicted_label?.toUpperCase() ?? "UNKNOWN"}
             </p>
+            <p>probabilities</p>
+            <p>Negative CKD : {predict.probabilities['Negatif CKD']}</p>
+            <p>Postive CKD : {predict.probabilities['Positif CKD']}</p>
           </div>
         )}
       </div>
