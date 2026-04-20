@@ -3,12 +3,12 @@ import Title from "../ui/Title";
 
 const content = [
   {
-    title: "Introduction",
-    description: "Chronic Kidney Disease (CKD) is a serious health problem that requires early detection to prevent complications. This study aims to build a CKD prediction model using the Support Vector Machine (SVM) algorithm with fuzzy logic-based feature selection. The clinical data used include indicators such as hemoglobin, blood glucose, and albumin. This model is expected to help make medical decisions more accurately and efficiently."
+    title: "Pendahuluan",
+    description: "Penyakit Ginjal Kronis (PGK) merupakan masalah kesehatan serius yang memerlukan deteksi dini untuk mencegah komplikasi lebih lanjut. Studi ini bertujuan untuk membangun model prediksi PGK menggunakan algoritma Support Vector Machine (SVM) dengan seleksi fitur berbasis logika fuzzy. Data klinis yang dianalisis mencakup indikator krusial seperti hemoglobin, glukosa darah, dan albumin. Model ini diharapkan dapat meningkatkan akurasi dan efisiensi dalam pengambilan keputusan medis."
   },
   {
-    title: "Features",
-    description: "The NephroXpert project adds insight into the application of machine learning to medical data. This model shows accurate and effective analysis results in predicting CKD, making it useful for clinical decision making."
+    title: "Keunggulan Sistem",
+    description: "Proyek NephroXpert memberikan kontribusi signifikan dalam penerapan machine learning pada domain data medis. Model ini menunjukkan hasil analisis yang akurat dan efektif dalam memprediksi PGK, sehingga menjadi instrumen yang bernilai bagi tenaga kesehatan dalam proses pengambilan keputusan klinis."
   }
 ];
 
