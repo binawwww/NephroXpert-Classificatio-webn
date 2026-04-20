@@ -31,7 +31,12 @@ export default function Tools() {
     Object.keys(inputData).forEach((key) => {
       const value = inputData[key];
       // Field kategorikal tetap string, numerik dikonversi
-      const kategorikalFields = ["appetite", "hypertension", "diabetes_mellitus", "aanemia"];
+      const kategorikalFields = [
+        "appetite",
+        "hypertension",
+        "diabetes_mellitus",
+        "aanemia",
+      ];
       if (kategorikalFields.includes(key)) {
         processedData[key] = value;
       } else {
@@ -69,7 +74,8 @@ export default function Tools() {
           Formulir Data Pasien
         </h1>
         <p className="text-center text-gray-400 text-sm mb-8">
-          Masukkan nilai laboratorium pasien untuk memprediksi risiko penyakit ginjal kronis
+          Masukkan nilai laboratorium pasien untuk memprediksi risiko penyakit
+          ginjal kronis
         </p>
 
         {/* Seksi: Penanda Darah */}
@@ -79,45 +85,99 @@ export default function Tools() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 mb-8">
           <div>
             <p className="text-white font-medium mb-1 text-sm">
-              Hemoglobin <span className="text-gray-400 font-normal">(3.1–17.8)</span>
+              Hemoglobin{" "}
+              <span className="text-gray-400 font-normal">(3.1–17.8)</span>
             </p>
-            <Input name="haemoglobin" placeholder="cth. 13.8" value={inputData.haemoglobin} onChange={handleChange} step="0.1" unit="g/dL" />
+            <Input
+              name="haemoglobin"
+              placeholder="cth. 13.8"
+              value={inputData.haemoglobin}
+              onChange={handleChange}
+              step="0.1"
+              unit="g/dL"
+            />
           </div>
           <div>
             <p className="text-white font-medium mb-1 text-sm">
-              Volume Sel Darah Merah <span className="text-gray-400 font-normal">(20–55)</span>
+              Volume Sel Darah Merah{" "}
+              <span className="text-gray-400 font-normal">(20–55)</span>
             </p>
-            <Input name="packed_cell_volume" placeholder="cth. 42" value={inputData.packed_cell_volume} onChange={handleChange} step="1" unit="%" />
+            <Input
+              name="packed_cell_volume"
+              placeholder="cth. 42"
+              value={inputData.packed_cell_volume}
+              onChange={handleChange}
+              step="1"
+              unit="%"
+            />
           </div>
           <div>
             <p className="text-white font-medium mb-1 text-sm">
-              Jumlah Sel Darah Merah <span className="text-gray-400 font-normal">(2.1–8.0)</span>
+              Jumlah Sel Darah Merah{" "}
+              <span className="text-gray-400 font-normal">(2.1–8.0)</span>
             </p>
-            <Input name="red_blood_cell_count" placeholder="cth. 5.0" value={inputData.red_blood_cell_count} onChange={handleChange} step="0.1" unit="juta/cmm" />
+            <Input
+              name="red_blood_cell_count"
+              placeholder="cth. 5.0"
+              value={inputData.red_blood_cell_count}
+              onChange={handleChange}
+              step="0.1"
+              unit="juta/cmm"
+            />
           </div>
           <div>
             <p className="text-white font-medium mb-1 text-sm">
-              Ureum Darah <span className="text-gray-400 font-normal">(1.5–391)</span>
+              Ureum Darah{" "}
+              <span className="text-gray-400 font-normal">(1.5–391)</span>
             </p>
-            <Input name="blood_urea" placeholder="cth. 30" value={inputData.blood_urea} onChange={handleChange} step="0.1" unit="mg/dL" />
+            <Input
+              name="blood_urea"
+              placeholder="cth. 30"
+              value={inputData.blood_urea}
+              onChange={handleChange}
+              step="0.1"
+              unit="mg/dL"
+            />
           </div>
           <div>
             <p className="text-white font-medium mb-1 text-sm">
-              Kreatinin Serum <span className="text-gray-400 font-normal">(0.4–76)</span>
+              Kreatinin Serum{" "}
+              <span className="text-gray-400 font-normal">(0.4–76)</span>
             </p>
-            <Input name="serum_creatinine" placeholder="cth. 1.0" value={inputData.serum_creatinine} onChange={handleChange} step="0.1" unit="mg/dL" />
+            <Input
+              name="serum_creatinine"
+              placeholder="cth. 1.0"
+              value={inputData.serum_creatinine}
+              onChange={handleChange}
+              step="0.1"
+              unit="mg/dL"
+            />
           </div>
           <div>
             <p className="text-white font-medium mb-1 text-sm">
-              Natrium <span className="text-gray-400 font-normal">(4.5–163)</span>
+              Natrium{" "}
+              <span className="text-gray-400 font-normal">(4.5–163)</span>
             </p>
-            <Input name="sodium" placeholder="cth. 140" value={inputData.sodium} onChange={handleChange} step="0.1" unit="mEq/L" />
+            <Input
+              name="sodium"
+              placeholder="cth. 140"
+              value={inputData.sodium}
+              onChange={handleChange}
+              step="0.1"
+              unit="mEq/L"
+            />
           </div>
           <div>
             <p className="text-white font-medium mb-1 text-sm">
               Albumin <span className="text-gray-400 font-normal">(0–5)</span>
             </p>
-            <Input name="albumin" placeholder="cth. 0" value={inputData.albumin} onChange={handleChange} step="0.1" />
+            <Input
+              name="albumin"
+              placeholder="cth. 0"
+              value={inputData.albumin}
+              onChange={handleChange}
+              step="0.1"
+            />
           </div>
         </div>
 
@@ -128,9 +188,16 @@ export default function Tools() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 mb-8">
           <div>
             <p className="text-white font-medium mb-1 text-sm">
-              Berat Jenis Urin <span className="text-gray-400 font-normal">(1.005–1.025)</span>
+              Berat Jenis Urin{" "}
+              <span className="text-gray-400 font-normal">(1.005–1.025)</span>
             </p>
-            <Input name="specific_gravity" placeholder="cth. 1.020" value={inputData.specific_gravity} onChange={handleChange} step="0.001" />
+            <Input
+              name="specific_gravity"
+              placeholder="cth. 1.020"
+              value={inputData.specific_gravity}
+              onChange={handleChange}
+              step="0.001"
+            />
           </div>
         </div>
 
@@ -171,7 +238,9 @@ export default function Tools() {
 
           {/* Diabetes Melitus — value tetap bahasa Inggris */}
           <div>
-            <p className="text-white font-medium mb-1 text-sm">Diabetes Melitus</p>
+            <p className="text-white font-medium mb-1 text-sm">
+              Diabetes Melitus
+            </p>
             <select
               name="diabetes_mellitus"
               value={inputData.diabetes_mellitus}
@@ -221,7 +290,9 @@ export default function Tools() {
         {!loading && predict && (
           <div className="mt-6 border border-gray-600 rounded-xl overflow-hidden">
             <div className="flex items-center gap-3 px-4 py-3 border-b border-gray-600">
-              <span className="text-white font-medium text-sm">Hasil prediksi</span>
+              <span className="text-white font-medium text-sm">
+                Hasil prediksi
+              </span>
               <span
                 className={`text-xs font-medium px-3 py-1 rounded-full ${
                   predict.predicted_label === "Positif CKD"
@@ -246,6 +317,16 @@ export default function Tools() {
                 </p>
               </div>
             </div>
+            {predict.note && (
+              <div className="mx-4 mb-4 flex items-start gap-2 bg-yellow-50 border border-yellow-300 rounded-lg px-4 py-3">
+                <span className="text-yellow-500 mt-0.5 text-base leading-none">
+                  ⚠️
+                </span>
+                <p className="text-yellow-800 text-xs leading-relaxed">
+                  {predict.note}
+                </p>
+              </div>
+            )}
           </div>
         )}
       </div>
