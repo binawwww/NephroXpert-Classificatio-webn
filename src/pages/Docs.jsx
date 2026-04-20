@@ -4,39 +4,39 @@ import Title from "../ui/Title";
 const content = [
   {
     span: "col-span-2",
-    title: "About NephroXpert",
+    title: "Tentang NephroXpert",
     description:
-      "NephroXpert is a medical decision support system for early detection of chronic kidney disease (CKD). The system uses SVM algorithm and fuzzy logic-based feature selection to process clinical data such as hemoglobin, glucose, and albumin. The goal is to provide fast and accurate predictions to help medical personnel identify at-risk patients early.",
+      "NephroXpert merupakan sistem pendukung keputusan medis yang dirancang untuk deteksi dini Penyakit Ginjal Kronis (PGK). Sistem ini mengintegrasikan algoritma Support Vector Machine (SVM) dengan seleksi fitur berbasis logika fuzzy untuk memproses data klinis seperti hemoglobin, glukosa, dan albumin. Fokus utama sistem ini adalah menyediakan prediksi yang cepat dan akurat guna membantu tenaga medis mengidentifikasi pasien berisiko tinggi secara prematur.",
   },
   {
     span: "col-span-1",
-    title: "Problems",
+    title: "Permasalahan",
     description:
-      "CKD detection is often delayed due to complicated clinical data analysis and lack of predictive tools. In addition, many data features are irrelevant, reducing diagnostic accuracy.",
+      "Identifikasi PGK sering kali terlambat akibat kompleksitas analisis data klinis serta keterbatasan alat bantu prediktif. Selain itu, banyaknya fitur data yang tidak relevan dalam dataset medis kerap menurunkan tingkat akurasi diagnosis konvensional.",
   },
   {
     span: "col-span-1",
-    title: "Research",
+    title: "Metodologi Penelitian",
     description:
-      "This study develops a chronic kidney disease (CKD) prediction system called nephroXpert using the Support Vector Machine (SVM) algorithm and fuzzy logic-based feature selection. Patient clinical data is categorized to improve model accuracy. Evaluation is carried out by measuring accuracy, precision, recall, and F1-score to assess system performance.",
+      "Penelitian ini mengembangkan sistem prediksi PGK bernama NephroXpert yang mengoptimalkan algoritma SVM dan seleksi fitur logika fuzzy. Data klinis pasien dikategorisasi untuk meningkatkan presisi model. Evaluasi performa dilakukan secara komprehensif melalui metrik akurasi, presisi, recall, dan F1-score.",
   },
   {
     span: "col-span-1",
     title: "Dataset",
     description:
-      "This Kaggle dataset contains 400 rows and 26 columns, with 12 numeric and 14 categorical. The target column is classification (CKD or not). Some of the column names in this data include: age, bp (blood pressure), sg (specific gravity), al (albumin), su (sugar), and id. This dataset is taken from the Kaggle platform and used to build a machine learning-based CKD classification model.",
+      "Dataset bersumber dari Kaggle, terdiri dari 400 observasi dengan 26 variabel (12 numerik dan 14 kategorikal). Fitur utama meliputi usia, tekanan darah (bp), berat jenis urin (sg), albumin (al), kadar gula (su), dan identitas pasien (id). Data ini digunakan sebagai landasan pengembangan model klasifikasi machine learning.",
   },
   {
     span: "col-span-1",
-    title: "Model",
+    title: "Model Prediksi",
     description:
-      "NephroXpert uses Support Vector Machine (SVM) to classify CKD and non-CKD data. The model is enhanced with fuzzy logic-based feature selection to select the most relevant clinical features. Numeric data is categorized for easier analysis and improved prediction accuracy.",
+      "NephroXpert mengimplementasikan Support Vector Machine (SVM) untuk mengklasifikasikan status PGK. Model diperkuat dengan seleksi fitur berbasis logika fuzzy untuk mereduksi noise dan memilih parameter klinis paling signifikan. Transformasi data numerik ke dalam kategori dilakukan guna meningkatkan efisiensi komputasi dan akurasi prediksi.",
   },
   {
     span: "col-span-2",
-    title: "Conclusion",
+    title: "Kesimpulan",
     description:
-      "NephroXpert berhasil membangun model prediksi CKD yang akurat menggunakan SVM dan seleksi fitur berbasis fuzzy logic. Sistem ini mampu menyederhanakan data klinis menjadi informasi prediktif yang bermanfaat bagi deteksi dini penyakit ginjal.",
+      "NephroXpert berhasil mengimplementasikan model prediksi PGK yang tangguh melalui sinergi algoritma SVM dan seleksi fitur logika fuzzy. Sistem ini terbukti mampu menyederhanakan data klinis yang kompleks menjadi informasi prediktif yang krusial bagi efektivitas deteksi dini penyakit ginjal.",
   },
 ];
 
